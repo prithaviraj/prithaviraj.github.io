@@ -1,0 +1,31 @@
+<br><br><br><br>
+<div class="row">
+
+<div class="column" >
+<div  > <label>To Do Name</label>
+<input type="text" id="fn" data-ng-model="mytodoObj.name">
+</div>
+<br>
+<div><label>To Do Description</label></div> 
+<textarea  rows="10"  style="width:100%" id="ln" data-ng-model="mytodoObj.description">  </textarea>
+
+<br><br>
+<div>
+<button  class="button22" ng-click="addData()"  ng-if="mytodoObj.name!=undefined && mytodoObj.name!=null&&  mytodoObj.name!=''">Add  Details</button>
+</div>
+</div>
+</div>
+<div class="row">
+
+<div class="dash" >
+  <p  ng-repeat="todo in list" >
+      
+      <label ng-class = "{'strikeoff': todo.checked}" ng-mouseover="open = true" ng-mouseleave="open = false">{{todo.name}}</label> 
+      &emsp;
+      <button  ng-click="delete($index)">delete</button></input>&emsp;&emsp;&emsp;
+      <input type = "checkbox" style="width: 14px; height: 14px"  ng-model=" todo.checked">&emsp;&emsp;&emsp;
+      <label class="dash2"  id="label1" ng-show = "open" ng-click="($index)" ><span >{{todo.description}} </span> </label>
+  </p>
+</div>
+</div>
+<div class="row"></div>
